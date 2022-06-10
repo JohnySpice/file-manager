@@ -4,6 +4,7 @@ import {up} from './navigation/up.js';
 import {cd} from './navigation/cd.js';
 import {cat} from './filesOperations/cat.js';
 import {add} from './filesOperations/add.js';
+import {rn} from './filesOperations/rn.js';
 
 export async function handleFsOperations(command, parameters, path) {
     if (command === 'ls') {
@@ -22,5 +23,8 @@ export async function handleFsOperations(command, parameters, path) {
     }
     if (command === 'add') {
         return add(path, parameters[0]);
+    }
+    if (command === 'rn') {
+        return rn(path, parameters[0], parameters[1]);
     }
 } 
