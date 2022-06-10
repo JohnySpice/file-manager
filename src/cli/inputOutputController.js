@@ -5,7 +5,6 @@ import {commandsMap} from '../commandsList.js';
 
 let userName;
 let path = homedir();
-//['up', 'ls', 'cat', 'add', 'rn', 'cp', 'mv', 'rm', 'os', 'hash', 'compress', 'decompress'];
 const ioInterface = createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -33,7 +32,7 @@ export function init() {
     process.on('exit', () => {
         ioInterface.close();
         farewell();
-        process.exit(0);
+        process.exit();
     });
 }
 
@@ -44,16 +43,20 @@ export function setPath(newPath) {
 
 async function inputHandler(data) {
     const [commandName, ...parameters] = data?.toString().trim().split(' ');
-    if (!commandsMap.has(commandName)) {
-        console.log('Invalid input');
-    } else {
-        try {
-            const result = await commandsMap.get(commandName)(commandName, parameters, path);
-            if (result) {
-                console.log(result);
+    if (commandName) {
+        if (!commandsMap.has(commandName)) {
+            console.log('Invalid input');
+        } else {
+            try {
+                const commandHandler = commandsMap.get(commandName);
+                const normalizedParams = parameters.filter(p => p);
+                const result = await commandHandler(commandName, normalizedParams, path);
+                if (result) {
+                    console.log(result);
+                }
+            } catch (e) {
+                console.error('Operation failed');
             }
-        } catch (e) {
-            console.error('Operation failed');
         }
     }
     ioInterface.prompt();
