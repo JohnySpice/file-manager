@@ -1,8 +1,5 @@
-import {resolve} from 'path';
-import {access} from 'fs/promises';
+import {resolve} from './pathResolver.js';
 
 export async function cd(basePath, destPath) {
-    const newPath = resolve(basePath, destPath);
-    await access(newPath);
-    return newPath;
+    return resolve(basePath, destPath, true);
 }

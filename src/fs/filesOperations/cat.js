@@ -1,8 +1,8 @@
-import {cd} from '../navigation/cd.js';
 import {createReadStream} from 'fs';
+import {resolve} from '../navigation/pathResolver.js';
 
 export async function cat(basePath, pathToFile) {
-    const filePath = await cd(basePath, pathToFile);
+    const filePath = await resolve(basePath, pathToFile, true);
     const readStream = createReadStream(filePath);
     return new Promise((resolve, reject) => {
         readStream.on('data', data => {
