@@ -8,4 +8,5 @@ export const commandsMap = new Map([
     ['cat', handleFsOperations],
     ['add', handleFsOperations],
     ['rn', handleFsOperations],
+    ['cp', handleFsOperations],
 ])
