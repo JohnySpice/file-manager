@@ -1,11 +1,6 @@
-import {ls} from './navigation/ls.js';
+import {add, cat, cp, rn} from './filesOperations/index.js';
+import {cd, ls, up} from './navigation/index.js';
 import {setPath} from '../cli/inputOutputController.js';
-import {up} from './navigation/up.js';
-import {cd} from './navigation/cd.js';
-import {cat} from './filesOperations/cat.js';
-import {add} from './filesOperations/add.js';
-import {rn} from './filesOperations/rn.js';
-import {cp} from './filesOperations/cp.js';
 
 export async function handleFsOperations(command, parameters, path) {
     if (command === 'ls') {
