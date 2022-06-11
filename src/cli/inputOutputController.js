@@ -16,7 +16,7 @@ function greetings() {
 }
 
 function farewell() {
-    console.log(`Thank you for using File Manager, ${userName}!\n`);
+    console.log(`\nThank you for using File Manager, ${userName}!\n`);
 }
 
 function printCurrentDirectory() {

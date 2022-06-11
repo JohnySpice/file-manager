@@ -18,6 +18,6 @@
 
 #Advanced
 - `hash fileName.txt`; `hash files/fileName.txt`; `hash /users/username/documents/file.html`
-- `compress fileName.txt .`; `compress files/fileName.txt ../../files`; `compress /users/username/documents/file.html /users/username/downloads` (result - filename.ext.br)
-- `decompress fileName.txt.br .`; `decompress files/fileName.txt.br ../../files`; `decompress /users/username/documents/file.html.br /users/username/downloads` (result - filename.ext)
+- `compress fileName.ext .`; `compress files/fileName.ext ../../files`; `compress /users/username/documents/file.ext /users/username/downloads` (result - filename.ext.br)
+- `decompress fileName.ext.br .`; `decompress files/fileName.ext.br ../../files`; `decompress /users/username/documents/file.ext.br /users/username/downloads` (result - filename.ext)
 
