@@ -3,3 +3,4 @@ export * from './add.js';
 export * from './rn.js';
 export * from './cp.js';
 export * from './rm.js';
+export * from './mv.js';

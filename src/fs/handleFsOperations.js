@@ -1,4 +1,4 @@
-import {add, cat, cp, rn, rm} from './filesOperations/index.js';
+import {add, cat, cp, rn, rm, mv} from './filesOperations/index.js';
 import {cd, ls, up} from './navigation/index.js';
 import {setPath} from '../cli/inputOutputController.js';
 
@@ -25,6 +25,9 @@ export async function handleFsOperations(command, parameters, path) {
     }
     if (command === 'cp') {
         return cp(path, parameters[0], parameters[1]);
+    }
+    if (command === 'mv') {
+        return mv(path, parameters[0], parameters[1]);
     }
     if (command === 'rm') {
         return rm(path, parameters[0]);
