@@ -55,7 +55,11 @@ async function inputHandler(data) {
                     console.log(result);
                 }
             } catch (e) {
-                console.error('Operation failed');
+                if (e.message === 'Invalid input') {
+                    console.log(e.message);
+                } else {
+                    console.log('Operation failed');
+                }
             }
         }
     }
