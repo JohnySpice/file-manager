@@ -17,4 +17,5 @@ export const commandsMap = new Map([
     ['os', os],
     ['hash', hash],
     ['compress', zip],
+    ['decompress', zip],
 ]);
