@@ -1,6 +1,7 @@
 import {add, cat, cp, rn} from './filesOperations/index.js';
 import {cd, ls, up} from './navigation/index.js';
 import {setPath} from '../cli/inputOutputController.js';
+import {rm} from './filesOperations/rm.js';
 
 export async function handleFsOperations(command, parameters, path) {
     if (command === 'ls') {
@@ -25,5 +26,8 @@ export async function handleFsOperations(command, parameters, path) {
     }
     if (command === 'cp') {
         return cp(path, parameters[0], parameters[1]);
+    }
+    if (command === 'rm') {
+        return rm(path, parameters[0]);
     }
 } 
