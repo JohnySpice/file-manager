@@ -1,4 +1,4 @@
-import {resolve} from '../navigation/pathResolver.js';
+import {resolve} from '../navigation/index.js';
 import {createReadStream, createWriteStream} from 'fs';
 import {pipeline} from 'stream/promises';
 import {basename, join} from 'path';
