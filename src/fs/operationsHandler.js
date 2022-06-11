@@ -2,7 +2,7 @@ import {add, cat, cp, rn, rm, mv} from './filesOperations/index.js';
 import {cd, ls, up} from './navigation/index.js';
 import {setPath} from '../cli/inputOutputController.js';
 
-export async function handleFsOperations(command, parameters, path) {
+export async function operationsHandler(command, parameters, path) {
     if (command === 'ls') {
         return ls(path);
     }

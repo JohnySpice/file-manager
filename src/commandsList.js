@@ -1,14 +1,14 @@
-import {handleFsOperations} from './fs/handleFsOperations.js';
+import {operationsHandler as fs} from './fs/operationsHandler.js';
 
 export const commandsMap = new Map([
     ['.exit', process.exit],
-    ['ls',handleFsOperations],
-    ['up', handleFsOperations],
-    ['cd', handleFsOperations],
-    ['cat', handleFsOperations],
-    ['add', handleFsOperations],
-    ['rn', handleFsOperations],
-    ['cp', handleFsOperations],
-    ['mv', handleFsOperations],
-    ['rm', handleFsOperations],
-])
+    ['ls',fs],
+    ['up', fs],
+    ['cd', fs],
+    ['cat', fs],
+    ['add', fs],
+    ['rn', fs],
+    ['cp', fs],
+    ['mv', fs],
+    ['rm', fs],
+]);
