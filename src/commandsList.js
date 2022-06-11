@@ -1,5 +1,6 @@
 import {operationsHandler as fs} from './fs/operationsHandler.js';
 import {operationsHandler as os} from './os/operationsHandler.js';
+import {operationsHandler as zip} from './zip/operationsHandler.js';
 import {hash} from './hash/hash.js';
 
 export const commandsMap = new Map([
@@ -15,4 +16,5 @@ export const commandsMap = new Map([
     ['rm', fs],
     ['os', os],
     ['hash', hash],
+    ['compress', zip],
 ]);
