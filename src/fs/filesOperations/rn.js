@@ -1,5 +1,5 @@
 import {access, rename} from 'fs/promises';
-import {resolve} from '../navigation/pathResolver.js';
+import {resolve} from '../navigation/index.js';
 import {basename} from 'path';
 
 export async function rn(path, sourceFilePath, destFilePath) {

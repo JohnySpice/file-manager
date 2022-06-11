@@ -1,5 +1,5 @@
 import {createReadStream} from 'fs';
-import {resolve} from '../navigation/pathResolver.js';
+import {resolve} from '../navigation/index.js';
 
 export async function cat(basePath, pathToFile) {
     const filePath = await resolve(basePath, pathToFile, true);

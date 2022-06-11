@@ -1,5 +1,5 @@
 import {open} from 'fs/promises';
-import {resolve} from '../navigation/pathResolver.js';
+import {resolve} from '../navigation/index.js';
 
 export async function add(path, fileName) {
     const correctPath = await resolve(path, fileName);
