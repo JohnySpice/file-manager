@@ -8,7 +8,7 @@ export async function operationsHandler(command, parameters) {
     if (normalizeParams === 'cpus') {
         const cpusInfo = cpus();
         return cpusInfo.reduce((acc, elem) => {
-            acc.cpus.push({model: elem.model, clockRate: elem.speed});
+            acc.cpus.push({model: elem.model, clockRate: elem.speed / 1000});
             return acc;
         }, {cpuAmount: cpusInfo.length, cpus: []});
     }
