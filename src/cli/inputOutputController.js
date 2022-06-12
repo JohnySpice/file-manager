@@ -2,6 +2,7 @@ import {getUserName} from './getNameFromArgs.js';
 import {homedir} from 'os';
 import {createInterface} from 'readline';
 import {commandsMap} from '../commandsList.js';
+import {parseInput} from './parseInput.js';
 
 let userName;
 let path = homedir();
@@ -42,15 +43,14 @@ export function setPath(newPath) {
 }
 
 async function inputHandler(data) {
-    const [commandName, ...parameters] = data?.toString().trim().split(' ');
+    const [commandName, ...parameters] = parseInput(data?.toString().trim());
     if (commandName) {
         if (!commandsMap.has(commandName)) {
             console.log('Invalid input');
         } else {
             try {
                 const commandHandler = commandsMap.get(commandName);
-                const normalizedParams = parameters.filter(p => p);
-                const result = await commandHandler(commandName, normalizedParams, path);
+                const result = await commandHandler(commandName, parameters, path);
                 if (result) {
                     console.log(result);
                 }
